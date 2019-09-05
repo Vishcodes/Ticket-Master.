@@ -39,7 +39,7 @@ class TicketShow extends React.Component {
 
     render() {
         return (
-            <div className='page-content'>
+            <div>
                 {(!this.state.isLoading) &&
                     <div>
                         <Container style={{ marginTop: '70px' }}>

@@ -21,12 +21,7 @@ const employeeSchema = new Schema({
     mobile: {
         type:String,
         required : true,
-        validate : {
-            validator : function(email) {
-                return /\d{3}-\d{3}-\d{4}/.test(email)
-            },
-            message : props => `${props.value} is not an valid mobile number`
-        }
+        maxlength: 10
     },
     createdAt : {
         type : Date,

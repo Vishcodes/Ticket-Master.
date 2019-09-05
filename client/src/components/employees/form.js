@@ -51,9 +51,9 @@ class EmployeeForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         let dept
-        if (this.state.department != '') {
+        if (this.state.department !== '') {
             dept = this.state.departments.find(department =>
-                department.name == this.state.department
+                department.name === this.state.department
             )
         }
         const formData = {
@@ -68,7 +68,7 @@ class EmployeeForm extends React.Component {
     render() {
         return (
             <div>
-                {this.state.departments.length != 0 ?
+                {this.state.departments.length !== 0 ?
                     <Container style={{ marginTop: '70px' }}>
                         <Col sm="12" md={{ size: 6, offset: 3 }} style={{ textAlign: 'center' }}>
                             <Card>
@@ -84,7 +84,12 @@ class EmployeeForm extends React.Component {
                                         <Input type='text' onChange={this.handleMobileChange} value={this.state.mobile} />
                                     </label><br />
                                     <label> Department
-                                        <Input className='select-width' type='select' value={this.state.department} onChange={this.handleDeptChange} >
+                                        <Input 
+                                            className='select-width'
+                                            type='select'
+                                            value={this.state.department}
+                                            onChange={this.handleDeptChange}
+                                        >
                                             <option key=''>Select</option>
                                             {
                                                 this.state.departments.map(department => {
@@ -95,7 +100,13 @@ class EmployeeForm extends React.Component {
                                             }
                                         </Input>
                                     </label><br />
-                                    <Button color='primary' onClick={this.handleSubmit} style={{ marginBottom: '20px' }}>Submit</Button>
+                                    <Button 
+                                        color='primary'
+                                        onClick={this.handleSubmit}
+                                        style={{ marginBottom: '20px' }}
+                                    >
+                                        Submit
+                                    </Button>
                                 </Form>
                             </Card>
                         </Col>

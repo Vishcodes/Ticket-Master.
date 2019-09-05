@@ -2,7 +2,6 @@ import React from 'react';
 import axios from '../../config/axios'
 import { Link } from 'react-router-dom'
 import { Table, Button } from 'reactstrap'
-import { FaPlusSquare } from "react-icons/fa"
 
 
 class TicketList extends React.Component {
@@ -35,7 +34,7 @@ class TicketList extends React.Component {
                     </Link>
                 </Button>
                 {
-                    this.state.tickets.length != 0 ?
+                    this.state.tickets.length !== 0 ?
                         <Table striped bordered style={{ width: '1000px' }}>
                             <thead style={{ fontWeight: 'bold' }}>
                                 <tr>

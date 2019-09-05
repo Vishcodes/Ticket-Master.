@@ -3,9 +3,8 @@ import axios from '../../config/axios'
 import { Link } from 'react-router-dom'
 import DepartmentForm from './form'
 import { Table, Button } from 'reactstrap'
-import { FaPlusSquare } from "react-icons/fa"
 
-class DepartmentList extends React.Component {
+class DepartmentList extends React.Component{
 
     constructor(props) {
         super(props)
@@ -62,7 +61,7 @@ class DepartmentList extends React.Component {
                     Add Department
                 </Button>
                 {this.state.isNew && <DepartmentForm handleSubmit={this.handleSubmit} />}
-                {this.state.departments.length != 0 ?
+                {this.state.departments.length !== 0 ?
                     <Table striped bordered style={{ width: '1000px' }}>
                         <thead style={{ fontWeight: 'bold' }}>
                             <tr>

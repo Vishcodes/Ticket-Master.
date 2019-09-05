@@ -98,7 +98,7 @@ export default class TicketForm extends React.Component {
 
     render() {
         if (this.state.departmentSelected.length !== 0) {
-            var filteredEmployees = this.state.employees.filter((employee) => employee.department._id == this.state.departmentSelected['value'])
+            var filteredEmployees = this.state.employees.filter((employee) => employee.department._id === this.state.departmentSelected['value'])
             var employeeOptions = filteredEmployees.map(employee => ({
                 value: employee._id, label: employee.name
             }))
@@ -113,15 +113,31 @@ export default class TicketForm extends React.Component {
                                 <h3 style={{ marginTop: '20px' }}>Add Ticket</h3>
                                 <Form>
                                     <label>TicketCode :
-                                    <Input type='text' value={this.state.ticketCode} onChange={this.handleChange} name='ticketCode' />
+                                    <Input 
+                                        type='text' 
+                                        value={this.state.ticketCode}
+                                        onChange={this.handleChange}
+                                        name='ticketCode' 
+                                    />
                                     </label><br />
 
                                     <label>Message :
-                                    <Input type='textarea' value={this.state.message} onChange={this.handleChange} name='message' />
+                                    <Input 
+                                        type='textarea'
+                                        value={this.state.message}
+                                        onChange={this.handleChange}
+                                        name='message' 
+                                    />
                                     </label><br />
 
                                     <label>Status :
-                                    <Input type='select' className={'select-width'} name='isCompleted' value={this.state.isCompleted} onChange={this.handleChange} >
+                                    <Input 
+                                        type='select'
+                                        className={'select-width'}
+                                        name='isCompleted'
+                                        value={this.state.isCompleted}
+                                        onChange={this.handleChange}
+                                    >
                                             <option value=''>Select</option>
                                             <option value={false}>Open</option>
                                             <option value={true}>Closed</option>
@@ -129,7 +145,13 @@ export default class TicketForm extends React.Component {
                                     </label><br />
 
                                     <label>Priority :
-                                    <Input type='select' className={'select-width'} name='priority' value={this.state.priority} onChange={this.handleChange} >
+                                    <Input 
+                                        type='select'
+                                        className={'select-width'}
+                                        name='priority'
+                                        value={this.state.priority}
+                                        onChange={this.handleChange}
+                                    >
                                             <option value=''>Select</option>
                                             <option value='High'>High</option>
                                             <option value='Medium'>Medium</option>
@@ -137,17 +159,38 @@ export default class TicketForm extends React.Component {
                                         </Input>
                                     </label><br />
                                     <label>Customers
-                                    <Select className={'select-width'} options={this.state.customerOptions} value={this.state.customerSelected} onChange={this.handleSelectChange} />
+                                    <Select 
+                                        className={'select-width'}
+                                        options={this.state.customerOptions}
+                                        value={this.state.customerSelected}
+                                        onChange={this.handleSelectChange}
+                                    />
                                     </label><br />
                                     <label>Departments
-                                    <Select className={'select-width'} options={this.state.departmentOptions} value={this.state.departmentSelected} onChange={this.handleDepartmentSelectChange} />
+                                    <Select 
+                                        className={'select-width'}
+                                        options={this.state.departmentOptions}
+                                        value={this.state.departmentSelected}
+                                        onChange={this.handleDepartmentSelectChange}
+                                    />
                                     </label><br />
                                     {this.state.departmentSelected &&
                                         <label>Employees
-                                        <Select className={'select-width'} options={employeeOptions} value={this.state.employeeSelected} onChange={this.handleEmployeeSelectChange} />
+                                        <Select 
+                                            className={'select-width'}
+                                            options={employeeOptions}
+                                            value={this.state.employeeSelected}
+                                            onChange={this.handleEmployeeSelectChange}
+                                        />
                                         </label>
                                     }<br />
-                                    <Button color='primary' onClick={this.handleSubmit} style={{ marginBottom: '20px' }}>Submit</Button>
+                                    <Button 
+                                        color='primary'
+                                        onClick={this.handleSubmit}
+                                        style={{ marginBottom: '20px' }}
+                                    >
+                                        Submit
+                                    </Button>
 
                                 </Form>
                             </Card>
